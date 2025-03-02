@@ -4,11 +4,14 @@ import numpy as np
 
 # Load the trained model and scaler
 @st.cache_resource
+def load_model():
+    with open("sepsis_model.pkl", "rb") as f:
+        model = pickle.load(f)
+    with open("scaler.pkl", "rb") as f:
+        scaler = pickle.load(f)
+    return model, scaler
 
-with open("sepsis_model.pkl", "rb") as f:
-    model = pickle.load(f)
-with open("scaler.pkl", "rb") as f:
-    scaler = pickle.load(f)
+model, scaler = load_model()
 
 # Navigation Menu
 st.sidebar.title("Navigation")

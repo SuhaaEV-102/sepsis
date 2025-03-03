@@ -12,8 +12,7 @@ def load_model():
     return model, scaler
 
 model, scaler = load_model()
-import os
-os.system("pip install scikit-learn")
+
 
 # Navigation Menu
 st.sidebar.title("Navigation")

@@ -5,4 +5,4 @@ requests
 matplotlib
 scikit-learn
 joblib
-pickle
+pickle-mixin

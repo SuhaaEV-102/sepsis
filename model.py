@@ -22,11 +22,11 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
-rf_model.fit(X_train_scaled, y_train)
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train_scaled, y_train)
 
 # Save model & scaler
 with open("sepsis_model.pkl", "wb") as f:
-    pickle.dump(rf_model, f)
+    pickle.dump(model, f)
 with open("scaler.pkl", "wb") as f:
     pickle.dump(scaler, f)
